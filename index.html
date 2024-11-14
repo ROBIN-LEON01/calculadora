@@ -122,7 +122,7 @@
 
 let currentInput = ""; // Entrada actual (números en la pantalla)
 let previousInput = ""; // Número anterior para realizar operaciones
-let operation = ""; // Operación actual (+, -, *, /)
+let operation = ""; // Operación actual (+, -, x, /)
 
 const display = document.getElementById("display");
 
@@ -155,7 +155,7 @@ function igual() {
     case "-":
         result = prev - current;
         break;
-    case "*":
+    case "x":
       result = prev * current;
         break;
     case "/":
