@@ -32,6 +32,24 @@
         </div>
     </div>
 
+
+    <
+        def calcular_resto():
+    try:
+        dividendo = int(input("Introduce el dividendo (número entero): "))
+        divisor = int(input("Introduce el divisor (número entero): "))
+
+        if divisor == 0:
+            print("Error: No se puede dividir por cero.")
+        else:
+            resto = dividendo % divisor
+            print(f"El resto de dividir {dividendo} entre {divisor} es: {resto}")
+    except ValueError:
+        print("Por favor, introduce solo números enteros.")
+
+calcular_resto()
+        >
+
 <!-- *************************** styles ****************************** -->
 <style>
     body{
