@@ -27,7 +27,7 @@
             <button id="btd" class="btd" onclick="operar('+')">+</button>
             <button id="btd" onclick="numDisplay('/')"><img src="icon_cal.png" alt="icon" class="img"></button>          
             <button id="btd" onclick="numDisplay(7)">7</button>
-            <button id="btd" onclick=".">.</button>
+            <button id="btd" onclick="convertirABinario()">Binario</button>
             <button id="btd" onclick="igual()" class="btd">=</button>     
         </div>
     </div>
@@ -255,6 +255,21 @@ function limpiar() {
 
 function updateDisplay() {
     display.value = currentInput;
+}
+
+    BI
+
+    function convertirABinario() {
+  if (currentInput === "") return; 
+
+  const number = parseInt(currentInput, 10); 
+  if (isNaN(number)) {
+    currentInput = "Error"; 
+  } else {
+    currentInput = number.toString(2);
+  }
+
+  updateDisplay(); 
 }
 
 
