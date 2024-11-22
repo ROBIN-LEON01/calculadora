@@ -34,62 +34,70 @@
 
 
     <
-        def calcular_resto():
-    try:
-        dividendo = int(input("Introduce el dividendo (número entero): "))
-        divisor = int(input("Introduce el divisor (número entero): "))
 
-        if divisor == 0:
-            print("Error: No se puede dividir por cero.")
-        else:
-            resto = dividendo % divisor
-            print(f"El resto de dividir {dividendo} entre {divisor} es: {resto}")
-    except ValueError:
-        print("Por favor, introduce solo números enteros.")
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-calcular_resto()
-        Html
-        <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Resto</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="calculator">
-        <h1>Calculadora de Resto</h1>
-        <form id="restoForm">
-            <label for="dividendo">Dividendo (número entero):</label>
-            <input type="number" id="dividendo" placeholder="Introduce el dividendo" required>
-            <label for="divisor">Divisor (número entero):</label>
-            <input type="number" id="divisor" placeholder="Introduce el divisor" required>
-            <button type="button" id="calcular">Calcular Resto</button>
-        </form>
-        <p id="resultado"></p>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-        js
-        document.getElementById('calcular').addEventListener('click', function() {
-    const dividendo = parseInt(document.getElementById('dividendo').value);
-    const divisor = parseInt(document.getElementById('divisor').value);
-    const resultado = document.getElementById('resultado');
+.calculator {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 
-    if (isNaN(dividendo) || isNaN(divisor)) {
-        resultado.textContent = "Por favor, introduce solo números enteros.";
-        resultado.style.color = "red";
-    } else if (divisor === 0) {
-        resultado.textContent = "Error: No se puede dividir por cero.";
-        resultado.style.color = "red";
-    } else {
-        const resto = dividendo % divisor;
-        resultado.textContent = `El resto de dividir ${dividendo} entre ${divisor} es: ${resto}`;
-        resultado.style.color = "green";
-    }
-});
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+p#resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+        
         >
 
 <!-- *************************** styles ****************************** -->
