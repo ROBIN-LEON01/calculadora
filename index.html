@@ -10,9 +10,9 @@
         <div class="box_item">
             <input class="input" type="text" name="" id="display">
             <button id="btd" class="btd_op" onclick="limpiar()">C</button>
-            <button id="btd"  class="btd_op" onclick="numDisplay(+/-)">+/-</button>
-            <button id="btd"  class="btd_op" onclick="numDisplay(%)">%</button>
-            <button id="btd" class="btd" onclick="numDisplay(/)">&divide;</button>
+            <button id="btd"  class="btd_op" onclick="numDisplay()">+/-</button>
+            <button id="btd"  class="btd_op" onclick="numDisplay('%')">%</button>
+            <button id="btd" class="btd" onclick="numDisplay('/')">&divide;</button>
             <button id="btd" onclick="numDisplay(1)">1</button>
             <button id="btd" onclick="numDisplay(2)">2</button>
             <button id="btd" onclick="numDisplay(4)">4</button>
@@ -196,10 +196,10 @@ function updateDisplay() {
   if (currentInput === "") return; 
 
   const number = parseInt(currentInput, 10); 
-  if (isNaN(num)) {
+  if (isNaN(number)) {
     currentInput = "Error"; 
   } else {
-    currentInput = num.toString(2);
+    currentInput = number.toString(2);
   }
 
   updateDisplay(); 
