@@ -205,6 +205,37 @@ function updateDisplay() {
   updateDisplay(); 
 }
 
+    function enteroABinario() {
+    if (currentInput === "") return; // Si no hay entrada, no hacemos nada
+    let entero = parseInt(currentInput); // Convertimos la entrada a entero
+    if (isNaN(entero)) return; // Validamos que sea un número válido
+
+    let binario = "";
+    while (entero > 0) {
+        binario = (entero % 2) + binario; // Obtenemos el resto (0 o 1) y lo añadimos al inicio
+        entero = Math.floor(entero / 2); // Dividimos entre 2 y tomamos la parte entera
+    }
+
+    currentInput = binario || "0"; // Si el número era 0, devolvemos "0"
+    updateDisplay(); // Actualizamos la pantalla
+}
+
+    
+    
+function binarioAEntero() {
+    if (currentInput === "") return; // Si no hay entrada, no hacemos nada
+    const binario = currentInput; // Tomamos el número en binario como cadena
+    let entero = 0;
+
+    for (let i = 0; i < binario.length; i++) {
+        const bit = parseInt(binario[i]); // Obtenemos cada dígito del binario
+        if (bit !== 0 && bit !== 1) return; // Validamos que solo haya 0 y 1
+        entero = entero * 2 + bit; // Calculamos el entero con desplazamiento de base
+    }
+
+    currentInput = entero.toString(); // Convertimos a cadena para mostrarlo
+    updateDisplay(); // Actualizamos la pantalla
+}
 
 </script>
 
